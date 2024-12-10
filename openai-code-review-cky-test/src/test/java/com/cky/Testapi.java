@@ -13,6 +13,8 @@ public class Testapi {
 
     @Test
     void test(){
-        System.out.println("aaaa");
+        System.out.println(Integer.parseInt("234sf"));
+
+
     }
 }
