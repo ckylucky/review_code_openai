@@ -1,5 +1,7 @@
 package com.cky;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * @ClassName Testapi
  * @Description TODO
@@ -8,4 +10,9 @@ package com.cky;
  * @Version 1.0
  */
 public class Testapi {
+
+    @Test
+    void test(){
+        System.out.println("aaaa");
+    }
 }
