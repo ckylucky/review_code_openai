@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Message {
 
-    private String touser = "or0Ab6ivwmypESVp_bYuk92T6SvU";
-    private String template_id = "GLlAM-Q4jdgsktdNd35hnEbHVam2mwsW2YWuxDhpQkU";
+    private String touser = "oj1Wh6FGtg8ix_mATPv_tgsR-xk0";
+    private String template_id = "uHjZ6VBexUJ7OtT6ZJGZlUTFHr-sS7gPUwiW6ZUaivQ";
     private String url = "https://weixin.qq.com";
     private Map<String, Map<String, String>> data = new HashMap<>();
 

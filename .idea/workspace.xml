@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:logv1.2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/utils/WXAccessTokenUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/test/java/com/cky/sdk/TestAPi.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/test/java/com/cky/sdk/TestAPi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="20241210-review-log" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,7 +33,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2pyqwOVlvvIqiuEWFqAxsuossbw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,13 +44,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/utils" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\java\com\cky\sdk\utils" />
       <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\java\com\cky\sdk" />
       <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\resources" />
       <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-test\src\main\resources" />
@@ -54,6 +59,29 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="test" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestAPi.weixin_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="openai-code-review-cky-sdk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cky.sdk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cky.sdk" />
+      <option name="MAIN_CLASS_NAME" value="com.cky.sdk.TestAPi" />
+      <option name="METHOD_NAME" value="weixin_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestAPi.weixin_test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -65,6 +93,7 @@
       <updated>1733748902512</updated>
       <workItem from="1733748903676" duration="1063000" />
       <workItem from="1733749984316" duration="2923000" />
+      <workItem from="1733879619187" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="feat:init project">
       <created>1733749650621</created>
