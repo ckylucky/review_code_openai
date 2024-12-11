@@ -1,4 +1,4 @@
-package com.cky.sdk.model;
+package com.cky.sdk.domain.model;
 
 public enum Model {
 

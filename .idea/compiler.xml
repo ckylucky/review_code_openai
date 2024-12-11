@@ -13,7 +13,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="openai-code-review-cky" options="" />
+      <module name="openai-code-review-cky" options="-parameters" />
       <module name="openai-code-review-cky-sdk" options="-parameters" />
       <module name="openai-code-review-cky-test" options="-parameters" />
     </option>

@@ -1,8 +1,8 @@
-package com.cky.sdk.model;
+package com.cky.sdk.infrastructure.openai.dto;
 
 import java.util.List;
 
-public class ChatCompletionSyncResponse {
+public class ChatCompletionSyncResponseDTO {
 
     private List<Choice> choices;
 
