@@ -13,7 +13,7 @@ public class Testapi {
 
     @Test
     void test(){
-        System.out.println(Integer.parseInt("234412412"));
+        System.out.println(Integer.parseInt("234412ASDD412"));
 
 
     }
