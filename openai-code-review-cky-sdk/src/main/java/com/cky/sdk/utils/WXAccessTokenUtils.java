@@ -9,12 +9,16 @@ import java.net.URL;
 
 public class WXAccessTokenUtils {
 
-    private static final String APPID = "wx8141e5c18f275f51";
-    private static final String SECRET = "f207e148f50517ecae72098e3311636c";
+    private static final String APPID = "wx5a228ff69e28a91f";
+    private static final String SECRET = "0bea03aa1310bac050aae79dd8703928";
     private static final String GRANT_TYPE = "client_credential";
     private static final String URL_TEMPLATE = "https://api.weixin.qq.com/cgi-bin/token?grant_type=%s&appid=%s&secret=%s";
 
     public static String getAccessToken() {
+        return getAccessToken(APPID, SECRET);
+    }
+
+    public static String getAccessToken(String APPID, String SECRET) {
         try {
             String urlString = String.format(URL_TEMPLATE, GRANT_TYPE, APPID, SECRET);
             URL url = new URL(urlString);
