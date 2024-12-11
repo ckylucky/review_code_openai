@@ -76,6 +76,7 @@ public class OpenAiCodeReview {
         Message message=new Message();
         message.put("reviewTime","20241211");
         message.put("reviewFile",logUrl);
+        message.setUrl(logUrl);
 
         String url = String.format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s", accessToken);
         sendPostRequest(url, JSON.toJSONString(message));
