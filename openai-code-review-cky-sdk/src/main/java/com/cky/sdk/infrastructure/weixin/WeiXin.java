@@ -2,10 +2,11 @@ package com.cky.sdk.infrastructure.weixin;
 
 
 import com.alibaba.fastjson2.JSON;
+import com.cky.sdk.infrastructure.weixin.dto.TemplateMessageDTO;
+import com.cky.sdk.utils.WXAccessTokenUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import plus.gaga.middleware.sdk.infrastructure.weixin.dto.TemplateMessageDTO;
-import plus.gaga.middleware.sdk.types.utils.WXAccessTokenUtils;
+
 
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
