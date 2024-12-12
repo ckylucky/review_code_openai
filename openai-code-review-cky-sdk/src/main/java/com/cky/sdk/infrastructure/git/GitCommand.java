@@ -94,7 +94,7 @@ public class GitCommand {
 
         logger.info("openai-code-review git commit and push done! {}", fileName);
 
-        return githubReviewLogUri + "/blob/master/" + dateFolderName + "/" + fileName;
+        return githubReviewLogUri + "/blob/main/" + dateFolderName + "/" + fileName;
     }
 
     public String getProject() {

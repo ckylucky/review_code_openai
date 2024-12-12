@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:refactor v2.6">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/main-remote-jar.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,21 +53,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.openai-code-review-cky-sdk [install].executor": "Run",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "20241211-REMOTE-JAR",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/xiaofu/openai-code-review-cky/.github/workflows",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.openai-code-review-cky-sdk [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/xiaofu/openai-code-review-cky/.github/workflows&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\xiaofu\openai-code-review-cky\.github\workflows" />
@@ -107,6 +105,7 @@
       <list>
         <item itemvalue="JUnit.TestAPi.weixin_test" />
         <item itemvalue="JUnit.TestAPi.weixin_test" />
+        <item itemvalue="JUnit.TestAPi.weixin_test" />
       </list>
     </recent_temporary>
   </component>
@@ -130,6 +129,7 @@
       <workItem from="1733749984316" duration="2923000" />
       <workItem from="1733879619187" duration="351000" />
       <workItem from="1733884028592" duration="5734000" />
+      <workItem from="1733966040019" duration="3226000" />
     </task>
     <task id="LOCAL-00001" summary="feat:init project">
       <created>1733749650621</created>
