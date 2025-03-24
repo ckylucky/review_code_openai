@@ -27,7 +27,7 @@ public class Deepseek implements IOpenAI {
     @Override
     public ChatCompletionSyncResponseDTO completions(ChatCompletionRequestDTO requestDTO) throws Exception {
         // 📞 联系街边小吃摊（不需要会员卡）
-        URL url = new URL("http://124.20.83.101:11434/api/chat"); // ▶️ 修改点1：换地址
+        URL url = new URL("http://124.220.83.101:11434/api/chat"); // ▶️ 修改点1：换地址
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "application/json"); // ▶️ 移除认证头
