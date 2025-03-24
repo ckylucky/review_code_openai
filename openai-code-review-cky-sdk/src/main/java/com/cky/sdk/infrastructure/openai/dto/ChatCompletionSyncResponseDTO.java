@@ -7,7 +7,7 @@ public class ChatCompletionSyncResponseDTO {
     private List<Choice> choices;
 
     public static class Choice {
-        private Message message = new Message();
+        private Message message = new Message(); // ✅ 关键修复：强制初始化
 
         public Message getMessage() {
             return message;
