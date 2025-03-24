@@ -5,7 +5,6 @@ on:
     branches: [ '*' ]
   pull_request:  # 与 push 保持同级
     branches: [ '*' ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
