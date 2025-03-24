@@ -86,7 +86,6 @@ public class GitCommand {
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
         }
-
         // 提交内容
         git.add().addFilepattern(dateFolderName + "/" + fileName).call();
         git.commit().setMessage("add code review new file" + fileName).call();
