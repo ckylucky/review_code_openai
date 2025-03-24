@@ -75,7 +75,7 @@ public class GitCommand {
 
         // 获取日期文件夹名称
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        // 构建完整的文件夹路径
+        // 构建完整的文件夹路径，包含 ckylucky 目录
         String fullPath = dateFolderName + "/ckylucky";
         File fullPathFolder = new File(fullPath);
 
@@ -84,7 +84,7 @@ public class GitCommand {
             fullPathFolder.mkdirs();
         }
 
-        // 生成文件名
+        // 生成文件名，确保不包含 ckylucky 前缀
         String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
         System.out.println(fileName);
         System.out.println(fullPathFolder);
@@ -95,7 +95,7 @@ public class GitCommand {
             writer.write(recommend);
         }
 
-        // 提交文件到 Git
+        // 提交文件到 Git，使用正确的文件路径
         git.add().addFilepattern(fullPath + "/" + fileName).call();
         git.commit().setMessage("add code review new file: " + fileName).call();
         git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, "")).call();
