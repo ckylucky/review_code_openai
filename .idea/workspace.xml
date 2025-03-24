@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:final">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,14 +216,6 @@
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1733882088834</updated>
-    </task>
-    <task id="LOCAL-00020" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742785558367</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1742785558367</updated>
     </task>
     <task id="LOCAL-00021" summary="feat:master3">
       <option name="closed" value="true" />
@@ -554,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742802290468</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742808109540</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1742808109540</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

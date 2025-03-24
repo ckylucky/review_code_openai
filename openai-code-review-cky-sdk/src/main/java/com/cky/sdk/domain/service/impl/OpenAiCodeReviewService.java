@@ -33,7 +33,6 @@ public class OpenAiCodeReviewService extends AbstractOpenAiCodeReviewService {
         chatCompletionRequest.setModel(Model.DEEPSEEK_R1_15B.getCode());
         chatCompletionRequest.setMessages(new ArrayList<ChatCompletionRequestDTO.Prompt>() {
             private static final long serialVersionUID = -7988151926241837899L;
-
             {
                 {
                     add(new ChatCompletionRequestDTO.Prompt("user", String.format(
