@@ -47,9 +47,8 @@ public class Deepseek implements IOpenAI {
 
         // 🚨 处理可能出错的订单
         if (connection.getResponseCode() >= 400) { // ▶️ 新增：错误处理
-            throw new IOException("订单出错：" + connection.getResponseMessage());
+            throw new IOException("连接出错：" + connection.getResponseMessage());
         }
-
         // 🛵 接收小吃摊的餐盒
         StringBuilder content = new StringBuilder();
         try (BufferedReader in = new BufferedReader(
