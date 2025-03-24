@@ -102,7 +102,7 @@ public class GitCommand {
         logger.info("openai-code-review git commit and push done! {}", fileName);
 
         // 假设 githubReviewLogUri 是已定义的，指向 GitHub 仓库的 URL
-        return "https://github.com/ckylucky/revirew_log.git" + "/blob/master/" + dateFolderName + "/ckylucky/" + fileName;
+        return "https://github.com/ckylucky/revirew_log.git" + "/blob/main/" + dateFolderName + "/ckylucky/" + fileName;
     }
 
 
