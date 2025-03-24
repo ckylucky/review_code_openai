@@ -68,42 +68,43 @@ public class GitCommand {
     }
     public String commitAndPush(String recommend) throws Exception {
         Git git = Git.cloneRepository()
-                .setURI("https://github.com/ckylucky/revirew_log" + ".git")
+                .setURI("https://github.com/ckylucky/revirew_log.git") // 请确认仓库 URL 是否正确
                 .setDirectory(new File("repo"))
                 .setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, ""))
                 .call();
 
         // 获取日期文件夹名称
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        // 构建完整的文件夹路径，包含 ckylucky 目录
-        String fullPath = dateFolderName + "/ckylucky";
-        File fullPathFolder = new File(fullPath);
+        // 构建完整的文件夹路径，注意避免重复添加 ckylucky 目录
+        File dateFolder = new File("repo/" + dateFolderName + "/ckylucky");
 
         // 如果文件夹不存在，则创建
-        if (!fullPathFolder.exists()) {
-            fullPathFolder.mkdirs();
+        if (!dateFolder.exists()) {
+            dateFolder.mkdirs();
         }
 
-        // 生成文件名，确保不包含 ckylucky 前缀
-        String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
-        System.out.println(fileName);
-        System.out.println(fullPathFolder);
+        // 生成文件名
+        String fileName = project + "-" + branch + "-" + author + "-" + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
+        System.out.println("Generated file name: " + fileName);
+        System.out.println("Full path folder: " + dateFolder.getAbsolutePath());
 
-        // 创建文件对象
-        File newFile = new File(fullPathFolder, fileName);
+        // 创建文件对象并写入内容
+        File newFile = new File(dateFolder, fileName);
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
         }
 
-        // 提交文件到 Git，使用正确的文件路径
-        git.add().addFilepattern(fullPath + "/" + fileName).call();
-        git.commit().setMessage("add code review new file: " + fileName).call();
+        // 提交文件到 Git
+        git.add().addFilepattern(newFile.getPath().replace("\\", "/")).call(); // 注意路径分隔符，Windows 上可能需要替换
+        git.commit().setMessage("Add code review new file: " + fileName).call();
         git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, "")).call();
 
         logger.info("openai-code-review git commit and push done! {}", fileName);
 
-        return githubReviewLogUri + "/blob/master/" + fullPath + "/" + fileName;
+        // 假设 githubReviewLogUri 是已定义的，指向 GitHub 仓库的 URL
+        return "https://github.com/ckylucky/revirew_log.git" + "/blob/master/" + dateFolderName + "/ckylucky/" + fileName;
     }
+
 
     public String getProject() {
         return project;
