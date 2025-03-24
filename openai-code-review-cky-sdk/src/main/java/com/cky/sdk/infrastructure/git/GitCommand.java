@@ -82,6 +82,7 @@ public class GitCommand {
 
         String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
         System.out.println(fileName);
+        System.out.println(dateFolder);
         File newFile = new File(dateFolder, fileName);
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
