@@ -30,6 +30,12 @@ jobs:
           mkdir -p libs
           mv openai-code-review-cky-sdk/target/*.jar ./libs/  # SDK 模块
 
+      - name: Set environment variables
+        run: |
+          echo "COMMIT_PROJECT=${{ github.repository }}" >> $GITHUB_ENV
+          echo "COMMIT_BRANCH=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "COMMIT_AUTHOR=${{ github.actor }}" >> $GITHUB_ENV
+          echo "COMMIT_MESSAGE=${{ github.event.commits.message }}" >> $GITHUB_ENV
       - name: Run Code Review
         run: java -jar ./libs/openai-code-review-cky-sdk-1.0.jar
         env:
