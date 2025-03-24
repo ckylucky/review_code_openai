@@ -44,7 +44,6 @@ public class Deepseek implements IOpenAI {
         try (OutputStream os = connection.getOutputStream()) {
             os.write(ollamaOrder.toString().getBytes(StandardCharsets.UTF_8)); // ▶️ 修改请求体结构
         }
-
         // 🚨 处理可能出错的订单
         if (connection.getResponseCode() >= 400) { // ▶️ 新增：错误处理
             throw new IOException("连接出错：" + connection.getResponseMessage());
