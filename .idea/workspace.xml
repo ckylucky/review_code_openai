@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:final">
-      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/main-remote-jar.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="20241211-REMOTE-JAR" />
+        <entry key="$PROJECT_DIR$" value="20241211-project-refactor" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,31 +57,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.TEST1.testChoiceInitialization.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TEST1.testInvalidApiResponse.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.openai-code-review-cky-sdk [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.openai-code-review-cky-sdk [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;20241211-project-refactor&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/xiaofu/openai-code-review-cky/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/infrastructure&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.TEST1.testChoiceInitialization.executor": "Run",
+    "JUnit.TEST1.testInvalidApiResponse.executor": "Run",
+    "Maven.openai-code-review-cky-sdk [clean].executor": "Run",
+    "Maven.openai-code-review-cky-sdk [install].executor": "Run",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "25.03.24",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/xiaofu/openai-code-review-cky/.github/workflows",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xiaofu\openai-code-review-cky\.github\workflows" />
       <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\java\com\cky\sdk\infrastructure" />
       <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\java\com\cky\sdk\domain" />
       <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\java\com\cky\sdk\infrastructure\weixin" />
       <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\java\com\cky\sdk\infrastructure\openai" />
-      <recent name="E:\xiaofu\openai-code-review-cky\openai-code-review-cky-sdk\src\main\java\com\cky\sdk\utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.cky.sdk.domain.model" />
@@ -216,14 +217,6 @@
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1733882088834</updated>
-    </task>
-    <task id="LOCAL-00021" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742785772683</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1742785772683</updated>
     </task>
     <task id="LOCAL-00022" summary="feat:master3">
       <option name="closed" value="true" />
@@ -553,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742808109540</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742808273170</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1742808273170</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
