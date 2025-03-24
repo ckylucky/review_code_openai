@@ -74,6 +74,8 @@ public class Deepseek implements IOpenAI {
         if (message.getString("role").isEmpty() ||message.getString("content").isEmpty()) {
             throw new IllegalArgumentException("role cannot be null or empty");
         }
+        System.out.println((message.getString("role")));
+        System.out.println((message.getString("content")));
         choice.getMessage().setRole(message.getString("role"));
         choice.getMessage().setContent(message.getString("content"));
 
