@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:master3">
-      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/infrastructure/openai/impl/Deepseek.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/infrastructure/openai/impl/Deepseek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/test/java/com/cky/sdk/TEST1.java" beforeDir="false" />
+    <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:master4">
+      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/AbstractOpenAiCodeReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/AbstractOpenAiCodeReviewService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -402,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742787941432</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat:master4">
+      <option name="closed" value="true" />
+      <created>1742788088402</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1742788088402</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +438,7 @@
     <MESSAGE value="feat:master1" />
     <MESSAGE value="feat:master2" />
     <MESSAGE value="feat:master3" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:master3" />
+    <MESSAGE value="feat:master4" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:master4" />
   </component>
 </project>
