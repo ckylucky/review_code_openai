@@ -3,7 +3,7 @@ package com.cky.sdk.infrastructure.openai.dto;
 import java.util.List;
 
 public class ChatCompletionSyncResponseDTO {
-
+    private Message message = new Message();
     private List<Choice> choices;
 
     public static class Choice {
