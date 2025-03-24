@@ -74,7 +74,7 @@ public class GitCommand {
                 .call();
         // 创建分支
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        // 修改：创建完整目录路径
+        // 创建完整目录路径
         String fullPath = dateFolderName + "/ckylucky";
         File fullPathFolder = new File(fullPath);
         if (!fullPathFolder.exists()) {
