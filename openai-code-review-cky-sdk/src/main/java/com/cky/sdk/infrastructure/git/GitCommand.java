@@ -72,31 +72,39 @@ public class GitCommand {
                 .setDirectory(new File("repo"))
                 .setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, ""))
                 .call();
-        // 创建分支
+
+        // 获取日期文件夹名称
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        // 创建完整目录路径
+        // 构建完整的文件夹路径
         String fullPath = dateFolderName + "/ckylucky";
         File fullPathFolder = new File(fullPath);
+
+        // 如果文件夹不存在，则创建
         if (!fullPathFolder.exists()) {
             fullPathFolder.mkdirs();
         }
 
+        // 生成文件名
         String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
         System.out.println(fileName);
         System.out.println(fullPathFolder);
+
+        // 创建文件对象
         File newFile = new File(fullPathFolder, fileName);
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
         }
-        // 提交内容
+
+        // 提交文件到 Git
         git.add().addFilepattern(fullPath + "/" + fileName).call();
-        git.commit().setMessage("add code review new file" + fileName).call();
+        git.commit().setMessage("add code review new file: " + fileName).call();
         git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, "")).call();
 
         logger.info("openai-code-review git commit and push done! {}", fileName);
 
         return githubReviewLogUri + "/blob/master/" + fullPath + "/" + fileName;
     }
+
     public String getProject() {
         return project;
     }
