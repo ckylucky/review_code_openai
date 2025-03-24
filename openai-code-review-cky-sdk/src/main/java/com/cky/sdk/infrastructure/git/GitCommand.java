@@ -75,7 +75,7 @@ public class GitCommand {
                 .call();
         // 创建分支
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        File dateFolder = new File("repo/" + dateFolderName);
+        File dateFolder = new File(dateFolderName);
         if (!dateFolder.exists()) {
             dateFolder.mkdirs();
         }
