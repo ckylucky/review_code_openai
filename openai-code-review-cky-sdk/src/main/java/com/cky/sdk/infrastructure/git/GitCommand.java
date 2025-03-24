@@ -68,41 +68,32 @@ public class GitCommand {
     }
     public String commitAndPush(String recommend) throws Exception {
         Git git = Git.cloneRepository()
-                .setURI("https://github.com/ckylucky/revirew_log") // 请确认仓库 URL 是否正确
+                .setURI(githubReviewLogUri + ".git")
                 .setDirectory(new File("repo"))
                 .setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, ""))
                 .call();
 
-        // 获取日期文件夹名称
+        // 创建分支
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        // 构建完整的文件夹路径，注意避免重复添加 ckylucky 目录
-        File dateFolder = new File( dateFolderName);
-
-        // 如果文件夹不存在，则创建
+        File dateFolder = new File("repo/" + dateFolderName);
         if (!dateFolder.exists()) {
             dateFolder.mkdirs();
         }
 
-        // 生成文件名
-        String fileName = project + "-" + branch + "-" + author + "-" + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
-        System.out.println("Generated file name: " + fileName);
-        System.out.println("Full path folder: " + dateFolder.getAbsolutePath());
-
-        // 创建文件对象并写入内容
+        String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
         File newFile = new File(dateFolder, fileName);
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
         }
 
-        // 提交文件到 Git
-        git.add().addFilepattern(newFile.getPath().replace("\\", "/")).call(); // 注意路径分隔符，Windows 上可能需要替换
-        git.commit().setMessage("Add code review new file: " + fileName).call();
+        // 提交内容
+        git.add().addFilepattern(dateFolderName + "/" + fileName).call();
+        git.commit().setMessage("add code review new file" + fileName).call();
         git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, "")).call();
 
         logger.info("openai-code-review git commit and push done! {}", fileName);
 
-        // 假设 githubReviewLogUri 是已定义的，指向 GitHub 仓库的 URL
-        return "https://github.com/ckylucky/revirew_log.git" + "/blob/main/" + dateFolderName + "/ckylucky/" + fileName;
+        return githubReviewLogUri + "/blob/main/" + dateFolderName + "/" + fileName;
     }
 
 
