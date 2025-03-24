@@ -76,7 +76,7 @@ public class GitCommand {
         // 获取日期文件夹名称
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         // 构建完整的文件夹路径，注意避免重复添加 ckylucky 目录
-        File dateFolder = new File("repo/" + dateFolderName + "/ckylucky");
+        File dateFolder = new File( dateFolderName);
 
         // 如果文件夹不存在，则创建
         if (!dateFolder.exists()) {
