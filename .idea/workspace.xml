@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:master51">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" afterDir="false" />
-    </list>
+    <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:final" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,30 +214,6 @@
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1733882088834</updated>
-    </task>
-    <task id="LOCAL-00016" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742784657366</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1742784657366</updated>
-    </task>
-    <task id="LOCAL-00017" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742784781737</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1742784781737</updated>
-    </task>
-    <task id="LOCAL-00018" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742784923504</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1742784923504</updated>
     </task>
     <task id="LOCAL-00019" summary="feat:master3">
       <option name="closed" value="true" />
@@ -553,7 +527,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742801607192</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742801915361</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1742801915361</updated>
+    </task>
+    <task id="LOCAL-00059" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742802010400</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1742802010400</updated>
+    </task>
+    <task id="LOCAL-00060" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742802168957</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1742802168957</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,6 +583,7 @@
     <MESSAGE value="feat:master4" />
     <MESSAGE value="feat:master5" />
     <MESSAGE value="feat:master51" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:master51" />
+    <MESSAGE value="feat:final" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:final" />
   </component>
 </project>
