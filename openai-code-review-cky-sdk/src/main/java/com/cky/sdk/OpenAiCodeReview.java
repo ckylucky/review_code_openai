@@ -5,6 +5,7 @@ import com.cky.sdk.domain.service.impl.OpenAiCodeReviewService;
 import com.cky.sdk.infrastructure.git.GitCommand;
 import com.cky.sdk.infrastructure.openai.IOpenAI;
 import com.cky.sdk.infrastructure.openai.impl.ChatGLM;
+import com.cky.sdk.infrastructure.openai.impl.Deepseek;
 import com.cky.sdk.infrastructure.weixin.WeiXin;
 
 import com.cky.sdk.utils.BearerTokenUtils;
@@ -77,7 +78,8 @@ public class OpenAiCodeReview {
 
 
 
-        IOpenAI openAI = new ChatGLM(getEnv("CHATGLM_APIHOST"), getEnv("CHATGLM_APIKEYSECRET"));
+//        IOpenAI openAI = new ChatGLM(getEnv("CHATGLM_APIHOST"), getEnv("CHATGLM_APIKEYSECRET"));
+        IOpenAI openAI = new Deepseek();
 
         OpenAiCodeReviewService openAiCodeReviewService = new OpenAiCodeReviewService(gitCommand, openAI, weiXin);
         openAiCodeReviewService.exec();

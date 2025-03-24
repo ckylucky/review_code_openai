@@ -3,10 +3,10 @@ name: Build and Run OpenAiCodeReview By Main Maven Jar
 on:
   push:
     branches:
-      - master
+      - *
   pull_request:
     branches:
-      - master
+      - *
 
 jobs:
   build:
@@ -46,5 +46,5 @@ jobs:
           WEIXIN_TOUSER: ${{ secrets.WEIXIN_TOUSER }}
           WEIXIN_TEMPLATE_ID: ${{ secrets.WEIXIN_TEMPLATE_ID }}
           # OpenAi - ChatGLM 配置「https://open.bigmodel.cn/api/paas/v4/chat/completions」、「https://open.bigmodel.cn/usercenter/apikeys」
-          CHATGLM_APIHOST: ${{ secrets.CHATGLM_APIHOST }}
-          CHATGLM_APIKEYSECRET: ${{ secrets.CHATGLM_APIKEYSECRET }}
+#          CHATGLM_APIHOST: ${{ secrets.CHATGLM_APIHOST }}
+#          CHATGLM_APIKEYSECRET: ${{ secrets.CHATGLM_APIKEYSECRET }}

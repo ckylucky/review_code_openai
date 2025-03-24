@@ -20,6 +20,9 @@ public enum Model {
     GLM_4V("glm-4v","根据输入的自然语言指令和图像信息完成任务，推荐使用 SSE 或同步调用方式请求接口"),
     GLM_4_FLASH("glm-4-flash","适用简单任务，速度最快，价格最实惠的版本，具有128k上下文"),
     COGVIEW_3("cogview-3","根据用户的文字描述生成图像,使用同步调用方式请求接口"),
+    DEEPSEEK_R1_15B("deepseek-r1:1.5b","deepseek1.5"),
+    DEEPSEEK_R1_70B("deepseek-r1:7b","deepseek7"),
+    DEEPSEEK_R1_320B("deepseek-r1:32b","deepseek32"),
     ;
     private final String code;
     private final String info;
