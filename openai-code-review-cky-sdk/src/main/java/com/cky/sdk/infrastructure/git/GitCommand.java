@@ -69,7 +69,7 @@ public class GitCommand {
 
     public String commitAndPush(String recommend) throws Exception {
         Git git = Git.cloneRepository()
-                .setURI("https://github.com/ckylucky/review_code_openai" + ".git")
+                .setURI("https://github.com/ckylucky/revirew_log" + ".git")
                 .setDirectory(new File("repo"))
                 .setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, ""))
                 .call();
