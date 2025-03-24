@@ -2,10 +2,11 @@ name: Build and Run OpenAiCodeReview By Main Maven Jar
 
 on:
   push:
-    branches: [ '*' ]
-  pull_request:  # 与 push 保持同级
-    branches: [ '*' ]
-
+    branches:
+      - * -close
+  pull_request:
+    branches:
+      - * -close
 jobs:
   build:
     runs-on: ubuntu-latest
