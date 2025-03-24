@@ -79,8 +79,10 @@ public class GitCommand {
         if (!dateFolder.exists()) {
             dateFolder.mkdirs();
         }
+
         String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
         File newFile = new File(dateFolder, fileName);
+        System.out.println(newFile.getAbsoluteFile());
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
         }
@@ -92,8 +94,9 @@ public class GitCommand {
 
         logger.info("openai-code-review git commit and push done! {}", fileName);
 
-        return githubReviewLogUri + "/blob/main/" + dateFolderName + "/" + fileName;
+        return githubReviewLogUri + "/blob/master/" + dateFolderName + "/" + fileName;
     }
+
 
 
     public String getProject() {
