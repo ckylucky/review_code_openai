@@ -2,7 +2,9 @@ package com.cky.sdk.infrastructure.git;
 
 import com.cky.sdk.utils.RandomStringUtils;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
+import org.eclipse.jgit.util.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class GitCommand {
 
@@ -66,35 +69,59 @@ public class GitCommand {
 
         return diffCode.toString();
     }
-
     public String commitAndPush(String recommend) throws Exception {
+        // 使用明确的项目根目录路径
+        File repoDir = new File(System.getProperty("user.dir"), "repo");
+
+
+        // 1. 克隆仓库（带完整校验）
         Git git = Git.cloneRepository()
                 .setURI(githubReviewLogUri + ".git")
-                .setDirectory(new File("repo"))
+                .setDirectory(repoDir)
                 .setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, ""))
                 .call();
 
-        // 创建分支
-        String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        File dateFolder = new File("repo/" + dateFolderName);
-        if (!dateFolder.exists()) {
-            dateFolder.mkdirs();
+        // 验证仓库元数据
+        if (!new File(repoDir, ".git").exists()) {
+            throw new IOException("Repository metadata not found");
         }
 
-        String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
+        // 2. 生成准确的时间戳目录
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        sdf.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        String dateFolderName = sdf.format(new Date());
+
+        File dateFolder = new File(repoDir, dateFolderName);
+        if (!dateFolder.exists() && !dateFolder.mkdirs()) {
+            throw new IOException("Directory creation failed: " + dateFolder.getAbsolutePath());
+        }
+
+        // 3. 创建文件（带路径校验）
+        String fileName = String.format("%s-%s-%s-%d-%s.md",
+                project, branch, author,
+                System.currentTimeMillis(),
+                RandomStringUtils.randomNumeric(4));
+
         File newFile = new File(dateFolder, fileName);
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
+        } catch (IOException e) {
+            throw new IOException("Failed to write file: " + newFile.getAbsolutePath(), e);
         }
-        // 提交内容
-        git.add().addFilepattern(dateFolderName + "/" + fileName).call();
-        git.commit().setMessage("add code review new file" + fileName).call();
-        git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, "")).call();
 
-        logger.info("openai-code-review git commit and push done! {}", fileName);
+        // 4. 提交并推送（带异常捕获）
+        try {
+            git.add().addFilepattern(dateFolderName + "/" + fileName).call();
+            git.commit().setMessage("Add review: " + fileName).call();
+            git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, "")).call();
+        } catch (GitAPIException e) {
+            throw new RuntimeException("Git operation failed", e);
+        }
 
+        logger.info("Successfully pushed: {}", newFile.getAbsolutePath());
         return githubReviewLogUri + "/blob/master/" + dateFolderName + "/" + fileName;
     }
+
 
     public String getProject() {
         return project;

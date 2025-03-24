@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:master4">
-      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/AbstractOpenAiCodeReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/AbstractOpenAiCodeReviewService.java" afterDir="false" />
+    <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:master5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/infrastructure/git/GitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/infrastructure/git/GitCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -409,7 +410,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742788088402</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feat:master4">
+      <option name="closed" value="true" />
+      <created>1742788155786</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1742788155786</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat:master5">
+      <option name="closed" value="true" />
+      <created>1742788442617</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1742788442617</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,6 +456,7 @@
     <MESSAGE value="feat:master2" />
     <MESSAGE value="feat:master3" />
     <MESSAGE value="feat:master4" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:master4" />
+    <MESSAGE value="feat:master5" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:master5" />
   </component>
 </project>
