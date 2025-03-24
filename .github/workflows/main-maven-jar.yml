@@ -25,8 +25,8 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Copy openai-code-review-sdk JAR
-        run: mvn dependency:copy -Dartifact=com.cky:openai-code-review-cky-sdk:1.0 -DoutputDirectory=./libs
+      - name: Move JAR to libs directory
+        run: mv target/openai-code-review-cky-sdk-1.0.jar ./libs/
 
       - name: Run Code Review
         run: java -jar ./libs/openai-code-review-sdk-1.0.jar
