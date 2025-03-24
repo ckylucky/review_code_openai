@@ -68,7 +68,7 @@ public class GitCommand {
     }
     public String commitAndPush(String recommend) throws Exception {
         Git git = Git.cloneRepository()
-                .setURI("https://github.com/ckylucky/revirew_log.git") // 请确认仓库 URL 是否正确
+                .setURI("https://github.com/ckylucky/revirew_log") // 请确认仓库 URL 是否正确
                 .setDirectory(new File("repo"))
                 .setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, ""))
                 .call();
