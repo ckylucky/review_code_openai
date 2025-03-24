@@ -63,7 +63,10 @@ public class Deepseek implements IOpenAI {
         // 📦 拆解小吃摊的特殊包装
         JSONObject ollamaResponse = JSON.parseObject(content.toString());
         ChatCompletionSyncResponseDTO response = new ChatCompletionSyncResponseDTO();
-
+// 检查requestDTO.getMessages()是否为空
+        if (requestDTO.getMessages() == null || requestDTO.getMessages().isEmpty()) {
+            throw new IllegalArgumentException("Messages cannot be null or empty");
+        }
         // 🥡 把小吃摊的饭盒装进高级餐盘
         ChatCompletionSyncResponseDTO.Choice choice = new ChatCompletionSyncResponseDTO.Choice();
         JSONObject message = ollamaResponse.getJSONObject("message"); // ▶️ 响应结构不同
