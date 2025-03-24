@@ -66,7 +66,6 @@ public class GitCommand {
 
         return diffCode.toString();
     }
-
     public String commitAndPush(String recommend) throws Exception {
         Git git = Git.cloneRepository()
                 .setURI("https://github.com/ckylucky/revirew_log" + ".git")
@@ -75,28 +74,29 @@ public class GitCommand {
                 .call();
         // 创建分支
         String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        File dateFolder = new File(dateFolderName);
-        if (!dateFolder.exists()) {
-            dateFolder.mkdirs();
+        // 修改：创建完整目录路径
+        String fullPath = dateFolderName + "/ckylucky";
+        File fullPathFolder = new File(fullPath);
+        if (!fullPathFolder.exists()) {
+            fullPathFolder.mkdirs();
         }
 
         String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
         System.out.println(fileName);
-        System.out.println(dateFolder);
-        File newFile = new File(dateFolder, fileName);
+        System.out.println(fullPathFolder);
+        File newFile = new File(fullPathFolder, fileName);
         try (FileWriter writer = new FileWriter(newFile)) {
             writer.write(recommend);
         }
         // 提交内容
-        git.add().addFilepattern(dateFolderName + "/" + fileName).call();
+        git.add().addFilepattern(fullPath + "/" + fileName).call();
         git.commit().setMessage("add code review new file" + fileName).call();
         git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(githubToken, "")).call();
 
         logger.info("openai-code-review git commit and push done! {}", fileName);
 
-        return githubReviewLogUri + "/blob/master/" + dateFolderName + "/" + fileName;
+        return githubReviewLogUri + "/blob/master/" + fullPath + "/" + fileName;
     }
-
     public String getProject() {
         return project;
     }
