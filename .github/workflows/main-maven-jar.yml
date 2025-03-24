@@ -32,7 +32,6 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "COMMIT_PROJECT=${{ github.repository }}" >> $GITHUB_ENV
           echo "COMMIT_BRANCH=${{ github.ref_name }}" >> $GITHUB_ENV
           echo "COMMIT_AUTHOR=${{ github.actor }}" >> $GITHUB_ENV
           echo "COMMIT_MESSAGE=${{ github.event.commits.message || 'No commit message provided' }}" >> $GITHUB_ENV
