@@ -25,14 +25,10 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Copy SDK JAR to libs
+      - name: Copy JAR to libs
         run: |
-          mkdir -p ./libs
-      # 核心模块的 JAR 路径
-          mv openai-code-review-cky-sdk/target/openai-code-review-cky-sdk-*.jar ./libs/
-
-      - name: List target directory
-        run: ls -l target  # 列出 target 目录内容
+          mkdir -p libs
+          mv openai-code-review-cky-sdk/target/*.jar ./libs/  # SDK 模块
 
         env:
           # Github 配置；GITHUB_REVIEW_LOG_URI「https://github.com/xfg-studio-project/openai-code-review-log」、GITHUB_TOKEN「https://github.com/settings/tokens」
