@@ -29,7 +29,6 @@ jobs:
         run: |
           mkdir -p libs
           mv openai-code-review-cky-sdk/target/*.jar ./libs/  # SDK 模块
-
       - name: Set environment variables
         run: |
          # 获取仓库名称
