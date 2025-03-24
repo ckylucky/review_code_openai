@@ -64,18 +64,18 @@ public class Deepseek implements IOpenAI {
         JSONObject ollamaResponse = JSON.parseObject(content.toString());
         ChatCompletionSyncResponseDTO response = new ChatCompletionSyncResponseDTO();
 // 检查requestDTO.getMessages()是否为空
-        if (requestDTO.getMessages() == null || requestDTO.getMessages().isEmpty()) {
-            throw new IllegalArgumentException("Messages cannot be null or empty");
-        }
+//        if (requestDTO.getMessages() == null || requestDTO.getMessages().isEmpty()) {
+//            throw new IllegalArgumentException("Messages cannot be null or empty");
+//        }
 
         // 🥡 把小吃摊的饭盒装进高级餐盘
         ChatCompletionSyncResponseDTO.Choice choice = new ChatCompletionSyncResponseDTO.Choice();
         JSONObject message = ollamaResponse.getJSONObject("message"); // ▶️ 响应结构不同''
-        if (message.getString("role").isEmpty() ||message.getString("content").isEmpty()) {
-            throw new IllegalArgumentException("role cannot be null or empty");
-        }
-        System.out.println((message.getString("role")));
-        System.out.println((message.getString("content")));
+//        if (message.getString("role").isEmpty() ||message.getString("content").isEmpty()) {
+//            throw new IllegalArgumentException("role cannot be null or empty");
+//        }
+//        System.out.println((message.getString("role")));
+//        System.out.println((message.getString("content")));
         choice.getMessage().setRole(message.getString("role"));
         choice.getMessage().setContent(message.getString("content"));
 
