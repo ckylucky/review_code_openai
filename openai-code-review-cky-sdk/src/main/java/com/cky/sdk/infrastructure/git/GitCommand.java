@@ -79,7 +79,6 @@ public class GitCommand {
         if (!dateFolder.exists()) {
             dateFolder.mkdirs();
         }
-
         String fileName = project + "-" + branch + "-" + author + System.currentTimeMillis() + "-" + RandomStringUtils.randomNumeric(4) + ".md";
         File newFile = new File(dateFolder, fileName);
         try (FileWriter writer = new FileWriter(newFile)) {
