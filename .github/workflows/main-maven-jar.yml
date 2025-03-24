@@ -25,11 +25,12 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Move JAR to libs directory
-        run: mv target/openai-code-review-cky-sdk-1.0.jar ./libs/
+      - name: Build with Maven
+        run: mvn clean install
 
-      - name: Run Code Review
-        run: java -jar ./libs/openai-code-review-sdk-1.0.jar
+      - name: List target directory
+        run: ls -l target  # 列出 target 目录内容
+
         env:
           # Github 配置；GITHUB_REVIEW_LOG_URI「https://github.com/xfg-studio-project/openai-code-review-log」、GITHUB_TOKEN「https://github.com/settings/tokens」
           GITHUB_REVIEW_LOG_URI: ${{ secrets.CODE_REVIEW_LOG_URI }}
