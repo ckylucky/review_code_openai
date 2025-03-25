@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:final">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,24 +59,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.TEST1.testChoiceInitialization.executor": "Run",
-    "JUnit.TEST1.testInvalidApiResponse.executor": "Run",
-    "Maven.openai-code-review-cky-sdk [clean].executor": "Run",
-    "Maven.openai-code-review-cky-sdk [install].executor": "Run",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "25.03.24",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/xiaofu/openai-code-review-cky/.github/workflows",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.TEST1.testChoiceInitialization.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TEST1.testInvalidApiResponse.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.openai-code-review-cky-sdk [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.openai-code-review-cky-sdk [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;25.03.24&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/xiaofu/openai-code-review-cky/.github/workflows&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\xiaofu\openai-code-review-cky\.github\workflows" />
@@ -167,6 +170,7 @@
       <workItem from="1733749984316" duration="2923000" />
       <workItem from="1733879619187" duration="351000" />
       <workItem from="1733884028592" duration="5734000" />
+      <workItem from="1742863187875" duration="11022000" />
     </task>
     <task id="LOCAL-00001" summary="feat:init project">
       <created>1733749650621</created>
@@ -216,22 +220,6 @@
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1733882088834</updated>
-    </task>
-    <task id="LOCAL-00024" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742786452819</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1742786452819</updated>
-    </task>
-    <task id="LOCAL-00025" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742786776280</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1742786776280</updated>
     </task>
     <task id="LOCAL-00026" summary="feat:master3">
       <option name="closed" value="true" />
@@ -553,7 +541,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742809133876</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742809189831</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1742809189831</updated>
+    </task>
+    <task id="LOCAL-00067" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742809383046</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1742809383046</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

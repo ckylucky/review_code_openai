@@ -1,6 +1,4 @@
 name: Build and Run OpenAiCodeReview By Main Maven Jar
-
-
 on:
   push:
     branches:
@@ -33,26 +31,26 @@ jobs:
           mv openai-code-review-cky-sdk/target/*.jar ./libs/  # SDK 模块
       - name: Set environment variables
         run: |
-         # 获取仓库名称
-         COMMIT_PROJECT=$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f2)
-         echo "COMMIT_PROJECT=$COMMIT_PROJECT" >> "$GITHUB_ENV"
-         # 获取分支名称
-         COMMIT_BRANCH="$GITHUB_REF_NAME"
-         echo "COMMIT_BRANCH=$COMMIT_BRANCH" >> "$GITHUB_ENV"
-         # 获取提交作者
-         COMMIT_AUTHOR="$GITHUB_ACTOR"
-         echo "COMMIT_AUTHOR=$COMMIT_AUTHOR" >> "$GITHUB_ENV"
-         # 获取提交消息
-         if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-         if [ -n "$(git log -1 --pretty=%B)" ]; then
-          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
-         else
+          # 获取仓库名称
+          COMMIT_PROJECT=$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f2)
+          echo "COMMIT_PROJECT=$COMMIT_PROJECT" >> "$GITHUB_ENV"
+          # 获取分支名称
+          COMMIT_BRANCH="$GITHUB_REF_NAME"
+          echo "COMMIT_BRANCH=$COMMIT_BRANCH" >> "$GITHUB_ENV"
+          # 获取提交作者
+          COMMIT_AUTHOR="$GITHUB_ACTOR"
+          echo "COMMIT_AUTHOR=$COMMIT_AUTHOR" >> "$GITHUB_ENV"
+          # 获取提交消息
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+          if [ -n "$(git log -1 --pretty=%B)" ]; then
+           COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          else
+           COMMIT_MESSAGE="No commit message provided"
+          fi
+          else
           COMMIT_MESSAGE="No commit message provided"
-         fi
-         else
-         COMMIT_MESSAGE="No commit message provided"
-         fi
-         echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> "$GITHUB_ENV"
+          fi
+          echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> "$GITHUB_ENV"
       - name: Run Code Review
         run: java -jar ./libs/openai-code-review-cky-sdk-1.0.jar
         env:

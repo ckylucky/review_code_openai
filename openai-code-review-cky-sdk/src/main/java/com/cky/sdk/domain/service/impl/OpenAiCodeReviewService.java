@@ -36,19 +36,11 @@ public class OpenAiCodeReviewService extends AbstractOpenAiCodeReviewService {
             {
                 {
                     add(new ChatCompletionRequestDTO.Prompt("user", String.format(
-                            "你是一位资深代码评审专家，请严格按照以下模板分析这段代码差异：\n\n" +
-                                    "### 代码评分（0-100）\n" +
-                                    "{评分}\n\n" +
-                                    "### 主要问题\n" +
-                                    "- [问题类型] 问题描述\n\n" +
-                                    "### 优化建议\n" +
-                                    "- 具体修改建议\n\n" +
-                                    "### 示例代码\n" +
-                                    "```diff\n%s\n```\n\n" +
-                                    "要求：\n" +
-                                    "1. 用中文输出\n" +
-                                    "2. 使用Markdown格式\n" +
-                                    "3. 重点检查安全漏洞和代码坏味道",
+                            "你是一位资深的编程架构师，精通架构设计、最佳实践以及各种编程语言。请根据以下git diff记录，对代码进行全面评审，重点关注以下几点：" +
+                                    "1. 代码是否符合最佳实践和设计模式？" +
+                                    "2. 是否存在潜在的bug或安全隐患？" +
+                                    "3. 代码的可读性和可维护性如何？" +
+                                    "4. 是否有需要优化的地方，如性能或逻辑简化？代码变更如下：%s",
                             diffCode
                     )));
                     add(new ChatCompletionRequestDTO.Prompt("user", diffCode));
