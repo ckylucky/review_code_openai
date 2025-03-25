@@ -1,11 +1,13 @@
 name: Build and Run OpenAiCodeReview By Main Maven Jar
+
 on:
   push:
     branches:
-      - * -close
+      - master
   pull_request:
     branches:
-      - * -close
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,40 +27,17 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: Copy JAR to libs
-        run: |
-          mkdir -p libs
-          mv openai-code-review-cky-sdk/target/*.jar ./libs/  # SDK 模块
-      - name: Set environment variables
-        run: |
-          # 获取仓库名称
-          COMMIT_PROJECT=$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f2)
-          echo "COMMIT_PROJECT=$COMMIT_PROJECT" >> "$GITHUB_ENV"
-          # 获取分支名称
-          COMMIT_BRANCH="$GITHUB_REF_NAME"
-          echo "COMMIT_BRANCH=$COMMIT_BRANCH" >> "$GITHUB_ENV"
-          # 获取提交作者
-          COMMIT_AUTHOR="$GITHUB_ACTOR"
-          echo "COMMIT_AUTHOR=$COMMIT_AUTHOR" >> "$GITHUB_ENV"
-          # 获取提交消息
-          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-          if [ -n "$(git log -1 --pretty=%B)" ]; then
-           COMMIT_MESSAGE=$(git log -1 --pretty=%B)
-          else
-           COMMIT_MESSAGE="No commit message provided"
-          fi
-          else
-          COMMIT_MESSAGE="No commit message provided"
-          fi
-          echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> "$GITHUB_ENV"
+      - name: Copy openai-code-review-sdk JAR
+        run: mvn dependency:copy -Dartifact=com.cky:openai-code-review-cky-sdk:1.0 -DoutputDirectory=./libs
+
       - name: Run Code Review
-        run: java -jar ./libs/openai-code-review-cky-sdk-1.0.jar
+        run: java -jar ./libs/openai-code-review-sdk-1.0.jar
         env:
           # Github 配置；GITHUB_REVIEW_LOG_URI「https://github.com/xfg-studio-project/openai-code-review-log」、GITHUB_TOKEN「https://github.com/settings/tokens」
           GITHUB_REVIEW_LOG_URI: ${{ secrets.CODE_REVIEW_LOG_URI }}
           GITHUB_TOKEN: ${{ secrets.CODE_TOKEN }}
-          COMMIT_PROJECT: ${{ env.COMMIT_PROJECT }}
-          COMMIT_BRANCH: ${{ env.COMMIT_BRANCH }}
+          COMMIT_PROJECT: ${{ env.REPO_NAME }}
+          COMMIT_BRANCH: ${{ env.BRANCH_NAME }}
           COMMIT_AUTHOR: ${{ env.COMMIT_AUTHOR }}
           COMMIT_MESSAGE: ${{ env.COMMIT_MESSAGE }}
           # 微信配置 「https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index」
@@ -67,5 +46,5 @@ jobs:
           WEIXIN_TOUSER: ${{ secrets.WEIXIN_TOUSER }}
           WEIXIN_TEMPLATE_ID: ${{ secrets.WEIXIN_TEMPLATE_ID }}
           # OpenAi - ChatGLM 配置「https://open.bigmodel.cn/api/paas/v4/chat/completions」、「https://open.bigmodel.cn/usercenter/apikeys」
-#          CHATGLM_APIHOST: ${{ secrets.CHATGLM_APIHOST }}
-#          CHATGLM_APIKEYSECRET: ${{ secrets.CHATGLM_APIKEYSECRET }}
+          CHATGLM_APIHOST: ${{ secrets.CHATGLM_APIHOST }}
+          CHATGLM_APIKEYSECRET: ${{ secrets.CHATGLM_APIKEYSECRET }}

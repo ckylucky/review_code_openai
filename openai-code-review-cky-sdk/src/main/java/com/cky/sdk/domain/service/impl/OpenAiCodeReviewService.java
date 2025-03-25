@@ -36,6 +36,7 @@ public class OpenAiCodeReviewService extends AbstractOpenAiCodeReviewService {
             private static final long serialVersionUID = -7988151926241837899L;
             {
                 {
+                    System.out.println(diffCode);
                     add(new ChatCompletionRequestDTO.Prompt("user", String.format(
                             "你是一位资深的编程架构师，精通架构设计、最佳实践以及各种编程语言。请根据以下git diff记录，对代码进行全面评审，重点关注以下几点：" +
                                     "1. 代码是否符合最佳实践和设计模式？" +
