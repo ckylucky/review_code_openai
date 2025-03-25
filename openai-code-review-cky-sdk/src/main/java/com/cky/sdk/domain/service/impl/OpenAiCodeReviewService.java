@@ -29,6 +29,7 @@ public class OpenAiCodeReviewService extends AbstractOpenAiCodeReviewService {
 
     @Override
     protected String codeReview(String diffCode) throws Exception {
+        System.out.println(diffCode);
         ChatCompletionRequestDTO chatCompletionRequest = new ChatCompletionRequestDTO();
         chatCompletionRequest.setModel(Model.DEEPSEEK_R1_15B.getCode());
         chatCompletionRequest.setMessages(new ArrayList<ChatCompletionRequestDTO.Prompt>() {
