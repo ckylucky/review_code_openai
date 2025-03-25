@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="41a7cd66-9f3c-4141-9145-fd6adeead897" name="Changes" comment="feat:final">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main-maven-jar.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/openai-code-review-cky-sdk/src/main/java/com/cky/sdk/domain/service/impl/OpenAiCodeReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main-remote-jar.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main-remote-jar.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,14 +218,6 @@
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1733882088834</updated>
-    </task>
-    <task id="LOCAL-00026" summary="feat:master3">
-      <option name="closed" value="true" />
-      <created>1742787280156</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1742787280156</updated>
     </task>
     <task id="LOCAL-00027" summary="feat:master3">
       <option name="closed" value="true" />
@@ -555,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742809383046</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="feat:final">
+      <option name="closed" value="true" />
+      <created>1742891335234</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1742891335234</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
