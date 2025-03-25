@@ -2,12 +2,9 @@ name: Build and Run OpenAiCodeReview By Main Remote Jar
 
 on:
   push:
-    branches:
-      - master-close
-  pull_request:
-    branches:
-      - master-close
-
+    branches: [ '*' ]
+  pull_request:  # 与 push 保持同级
+    branches: [ '*' ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +25,7 @@ jobs:
         run: mkdir -p ./libs
 
       - name: Download openai-code-review-sdk JAR
-        run: wget -O ./libs/openai-code-review-sdk-1.0.jar https://github.com/ckylucky/review_code_openai/releases/download/v1.0/openai-code-review-cky-sdk-1.0.jar
+        run: wget -O ./libs/openai-code-review-sdk-1.0.jar https://github.com/ckylucky/review_code_openai/releases/download/v2.0/openai-code-review-cky-sdk-1.0.jar
 
       - name: Get repository name
         id: repo-name
