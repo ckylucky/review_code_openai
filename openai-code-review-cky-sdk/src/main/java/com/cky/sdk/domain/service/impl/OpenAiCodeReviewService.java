@@ -29,7 +29,9 @@ public class OpenAiCodeReviewService extends AbstractOpenAiCodeReviewService {
 
     @Override
     protected String codeReview(String diffCode) throws Exception {
-        System.out.println(diffCode);
+
+        // 提取变更信息
+        String changeDetails = extractChangeDetails(diffCode);
         ChatCompletionRequestDTO chatCompletionRequest = new ChatCompletionRequestDTO();
         chatCompletionRequest.setModel(Model.DEEPSEEK_R1_15B.getCode());
         chatCompletionRequest.setMessages(new ArrayList<ChatCompletionRequestDTO.Prompt>() {
@@ -38,11 +40,14 @@ public class OpenAiCodeReviewService extends AbstractOpenAiCodeReviewService {
                 {
                     System.out.println(diffCode);
                     add(new ChatCompletionRequestDTO.Prompt("user", String.format(
-                            "你是一位资深的编程架构师，精通架构设计、最佳实践以及各种编程语言。请根据以下git diff记录，对代码进行全面评审，重点关注以下几点：" +
-                                    "1. 代码是否符合最佳实践和设计模式？" +
-                                    "2. 是否存在潜在的bug或安全隐患？" +
-                                    "3. 代码的可读性和可维护性如何？" +
-                                    "4. 是否有需要优化的地方，如性能或逻辑简化？代码变更如下：%s",
+                            "👋你是一位资深的编程架构师，精通架构设计、最佳实践以及各种编程语言。请根据以下git diff记录，对代码进行全面评审✨，重点关注以下几点：\n" +
+                                    "👉1. 代码是否符合最佳实践和设计模式？\n" +
+                                    "👉2. 是否存在潜在的bug或安全隐患？\n" +
+                                    "👉3. 代码的可读性和可维护性如何？\n" +
+                                    "👉4. 是否有需要优化的地方，如性能或逻辑简化？\n\n" +
+                                    "📋代码做了如下更改：\n%s\n\n" +
+                                    "📄代码变更详情如下：\n%s",
+                            changeDetails,
                             diffCode
                     )));
                     add(new ChatCompletionRequestDTO.Prompt("user", diffCode));
@@ -53,6 +58,18 @@ public class OpenAiCodeReviewService extends AbstractOpenAiCodeReviewService {
             ChatCompletionSyncResponseDTO.Message message = completions.getChoices().get(0).getMessage();
             return message.getContent();
         }
+    private  String extractChangeDetails(String diffCode) {
+        StringBuilder details = new StringBuilder();
+        String[] lines = diffCode.split("\n");
+        for (String line : lines) {
+            if (line.startsWith("-")) {
+                details.append("❌删除了: ").append(line.substring(1)).append("\n");
+            } else if (line.startsWith("+")) {
+                details.append("✅添加了: ").append(line.substring(1)).append("\n");
+            }
+        }
+        return details.toString();
+    }
 
         @Override
         protected String recordCodeReview(String recommend) throws Exception {
